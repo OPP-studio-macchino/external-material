@@ -79,10 +79,10 @@ scene.add(directionalLight);
 /////////////////////////////////////////////
 // 外部オブジェクトの挿入
 const loader = new GLTFLoader();
-loader.load('./scene.gltf', (gltf) => {
+loader.load('scene.gltf', (gltf) => {
   gltf.scene.scale.set(10, 10, 10);
   scene.add(gltf.scene);
-  console.log('gltf model loaded');
+  // console.log('gltf model loaded');
 });
 
 function animate() {
