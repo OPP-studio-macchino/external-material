@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-import sceneImg from './scene.gltf';
+import modelDataUrl from "./scene.gltf?url";
 
 
 // canvasタグの取得
@@ -81,7 +81,7 @@ scene.add(directionalLight);
 /////////////////////////////////////////////
 // 外部オブジェクトの挿入
 const loader = new GLTFLoader();
-loader.load(sceneImg, (gltf) => {
+loader.load(modelDataUrl, (gltf) => {
   gltf.scene.scale.set(10, 10, 10);
   scene.add(gltf.scene);
   // console.log('gltf model loaded');
