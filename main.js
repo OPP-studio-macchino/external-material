@@ -1,9 +1,9 @@
-import './style.css'
+import './style.css';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-import sceneImg from './scene.gltf'
+// import sceneImg from './scene.gltf';
 
 
 // canvasタグの取得
@@ -81,10 +81,9 @@ scene.add(directionalLight);
 /////////////////////////////////////////////
 // 外部オブジェクトの挿入
 const loader = new GLTFLoader();
-loader.load(sceneImg, (gltf) => {
+loader.load('./scene.gltf', (gltf) => {
   gltf.scene.scale.set(10, 10, 10);
   scene.add(gltf.scene);
-  // console.log('gltf model loaded');
 });
 
 function animate() {
